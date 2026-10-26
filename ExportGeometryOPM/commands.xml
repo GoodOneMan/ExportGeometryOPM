@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<KeyinTree xmlns="http://www.bentley.com/schemas/1.0/MicroStation/AddIn/KeyinTree.xsd">
+	<RootKeyinTable ID="root">
+		<Keyword SubtableRef="Export" CommandClass="MacroCommand" CommandWord="RawGeometryExport" >
+			<Options Required="true"/>
+		</Keyword>
+	</RootKeyinTable>
+
+	<SubKeyinTables>
+		<KeyinTable ID="Export">
+			<Keyword SubtableRef="Commands" CommandWord="Export">
+				<Options Required="true"/>
+			</Keyword>
+		</KeyinTable>
+		<KeyinTable ID="Commands">
+			<Keyword CommandWord="WholeModel"> </Keyword>
+			<Keyword CommandWord="Selected"> </Keyword>
+		</KeyinTable>
+	</SubKeyinTables>
+
+	<KeyinHandlers>
+		<KeyinHandler Keyin="RawGeometryExport Export WholeModel" Function="RawGeometryExport.Export.WholeModel"/>
+		<KeyinHandler Keyin="RawGeometryExport Export Selected" Function="RawGeometryExport.Export.Selected"/>
+	</KeyinHandlers>
+</KeyinTree>
